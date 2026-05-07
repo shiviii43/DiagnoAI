@@ -1,0 +1,15 @@
+.btn{
+    margin-left:20px;
+    padding: 2px;
+    padding-inline:6px;
+    background-color: green;
+    border-radius: 7px;
+    color:white;
+}
+
+.paymentLogo{
+    width: auto;
+    margin-inline:20px;
+    padding:2px;
+    height: 35px;
+}

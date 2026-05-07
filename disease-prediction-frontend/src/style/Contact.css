@@ -1,0 +1,27 @@
+.label{
+    font-size: medium;
+}
+.input{
+    margin-top:2px;
+    width: 50%;
+    text-align:left;
+    border:2px solid black;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+.input:focus{
+    outline: none;
+    border-color: #4A90E2
+}
+.message{
+    max-width:350px;
+    min-height:120px;
+    border: 2px solid black;
+    padding-left:5px;
+    resize:vertical;
+    border-radius: 5px;
+}
+.message:focus{
+    outline: none;
+    border-color: #4A90E2
+}

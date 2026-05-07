@@ -1,0 +1,14 @@
+.h1{
+    font-size: large;
+    font-weight: 500;
+    padding-top: 15px;
+    font-style: italic;
+}
+.content,.list{
+    font-size: small;
+    text-justify:newspaper;
+}
+.list{
+    list-style-type:disc;
+    padding-left: 25px;
+}
