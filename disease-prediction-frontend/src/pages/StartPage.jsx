@@ -2,6 +2,7 @@ import PageTitle from "../components/PageTitle"
 import "../components/DiseaseFields"
 import { useState } from "react"
 import {DiseaseFields} from "../components/DiseaseFields"
+import API from '../services/api'
 
 const StartPage = () => {
     const[selectedDisease, setSelectedDisease] = useState("")
@@ -16,16 +17,25 @@ const StartPage = () => {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if(!selectedDisease) return;
-        const processedData = DiseaseFields[selectedDisease].transform(formData)
 
-        console.log("Disease : ", selectedDisease)
-        console.log("Processed Data : ",processedData)
-        //Send the data to the backend here 
+        try{
+            const processedData = DiseaseFields[selectedDisease].transform(formData);
+            console.log("Disease : ", selectedDisease)
+            console.log("Processed Data : ",processedData)
+
+            //Sending the Form data to the backend.
+            const response = await API.post(
+                `/${selectedDisease}/predict`,
+                processedData
+            );
+            console.log("Prediction Result: ",response.data);
+        }catch(error){
+            console.error("Axios Error:",error);
+        }
     }
-
     return(
         <div className=" max-w-4xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
             <PageTitle title="Information Input Form" paragraph="Enter the details below to analyse the Patient's symptoms"/>
@@ -41,6 +51,7 @@ const StartPage = () => {
                 <option value="">Select Disease</option>
                 <option value="diabetes">Diabetes</option>
                 <option value="heart">Heart Disease</option>
+                <option value="liver">Liver Disease</option>
             </select>  
 
             {/*Dynamic Form*/}
@@ -63,16 +74,17 @@ const StartPage = () => {
                 >
                 <option value="">Select</option>
                 {field.options.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
+                    <option key={opt.value} value={opt.value}>
+                    {opt.label}
                   </option>
                 ))}
                 </select>
             ) : (
               <input
-                type="number"
+                type={field.type}
                 name={field.name}
                 value={formData[field.name] || ""}
+                step={field.step || "1"}
                 onChange={handleChange}
                 className="w-full p-2 rounded bg-white/20 border border-white/30"
               />
