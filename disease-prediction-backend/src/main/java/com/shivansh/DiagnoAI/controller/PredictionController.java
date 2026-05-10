@@ -17,7 +17,6 @@ public class PredictionController {
 
     @PostMapping("/diabetes/predict")
     public ResponseDTO getDiabetes(@RequestBody DiabetesDTO diabetesData){
-        System.out.println((diabetesData));
         return serviceObj.predictDiabetes(diabetesData);
     }
     @PostMapping("/heart/predict")

@@ -5,32 +5,15 @@ diabetes_model = joblib.load("models/diabetes_model.pkl")
 heart_model = joblib.load("models/heart_model.pkl")
 liver_model = joblib.load("models/liver_model.pkl")
 
-gender_encoder = joblib.load("models/gender_encoder.pkl")
-location_encoder = joblib.load("models/location_encoder.pkl")
-smoking_encoder = joblib.load("models/smoking_encoder.pkl")
-
-liver_gender_encoder = joblib.load("models/liver_gender_encoder.pkl")
-
 def predict_diabetes(data):
-
-    encoded_gender = gender_encoder.transform([data.gender])[0]
-    encoded_location = location_encoder.transform([data.location])[0]
-    encoded_smoking = smoking_encoder.transform([data.smoking_history])[0]
 
     input_data = np.array([[
 
-        data.year,
-        encoded_gender,
+        data.gender,
         data.age,
-        encoded_location,
-        data.race_africanamerican,
-        data.race_asian,
-        data.race_caucasian,
-        data.race_hispanic,
-        data.race_other,
         data.hypertension,
         data.heart_disease,
-        encoded_smoking,
+        data.smoking_history,
         data.bmi,
         data.hbA1c_level,
         data.blood_glucose_level
@@ -38,17 +21,22 @@ def predict_diabetes(data):
     ]])
 
     prediction = diabetes_model.predict(input_data)
-
-    return int(prediction[0])
+    probabilities = diabetes_model.predict_proba(input_data)
+    confidence = np.max(probabilities) * 100
+    return{
+        "disease" : "Diabetes",
+        "prediction" : int(prediction[0]),
+        "confidence" : round(float(confidence),2)
+    }
 
 def predict_heart(data):
 
     input_data = np.array([[
 
         data.age,
-        data.sex,
+        data.gender,
         data.cp,
-        data.trestbps,
+        data.restbps,
         data.chol,
         data.fbs,
         data.restecg,
@@ -62,28 +50,36 @@ def predict_heart(data):
     ]])
 
     prediction = heart_model.predict(input_data)
-
-    return int(prediction[0])
+    probabilities = heart_model.predict_proba(input_data)
+    confidence = np.max(probabilities) * 100
+    return{
+        "disease" : "Heart Disease",
+        "prediction" : int(prediction[0]),
+        "confidence" : round(float(confidence),2)
+    }
 
 def predict_liver(data):
-
-    encoded_gender = liver_gender_encoder.transform([data.gender])[0]
 
     input_data = np.array([[
 
         data.age,
-        encoded_gender,
+        data.gender,
         data.total_bilirubin,
         data.direct_bilirubin,
         data.alkaline_phosphotase,
         data.alamine_aminotransferase,
         data.aspartate_aminotransferase,
-        data.total_protiens,
+        data.total_proteins,
         data.albumin,
         data.albumin_and_globulin_ratio
 
     ]])
 
     prediction = liver_model.predict(input_data)
-
-    return int(prediction[0])
+    probabilities = liver_model.predict_proba(input_data)
+    confidence = np.max(probabilities) * 100
+    return{
+        "disease" : "Liver Disease",
+        "prediction" : int(prediction[0]),
+        "confidence" : round(float(confidence),2)
+    }

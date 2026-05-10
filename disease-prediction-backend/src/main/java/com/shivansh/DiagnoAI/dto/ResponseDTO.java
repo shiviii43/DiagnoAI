@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ResponseDTO {
-    private String diseaseName;
-    private boolean prediction;
+    private String disease;
+    private int prediction;
     private double confidence;
 }

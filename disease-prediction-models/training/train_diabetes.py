@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 import joblib
@@ -14,6 +13,9 @@ label_encoder = LabelEncoder()
 df["gender"] = label_encoder.fit_transform(df["gender"])
 df["location"] = label_encoder.fit_transform(df["location"])
 df["smoking_history"] = label_encoder.fit_transform(df["smoking_history"])
+
+#droping not required columns from the dataset
+df = df.drop(["year","location","race:AfricanAmerican","race:Asian","race:Caucasian","race:Hispanic","race:Other"],axis=1)
 
 #Feature Selection
 X = df.drop("diabetes", axis=1)

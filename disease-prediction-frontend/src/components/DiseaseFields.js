@@ -248,7 +248,7 @@ export const DiseaseFields = {
             type: "number"
         },
         {
-            name: "total_protiens",
+            name: "total_proteins",
             label: "Total Proteins",
             type: "number",
             step: "0.1"
@@ -276,7 +276,7 @@ export const DiseaseFields = {
         alkaline_phosphotase: Number(data.alkaline_phosphotase),
         alamine_aminotransferase: Number(data.alamine_aminotransferase),
         aspartate_aminotransferase: Number(data.aspartate_aminotransferase),
-        total_protiens: Number(data.total_protiens),
+        total_proteins: Number(data.total_proteins),
         albumin: Number(data.albumin),
         albumin_and_globulin_ratio: Number(data.albumin_and_globulin_ratio)
     })

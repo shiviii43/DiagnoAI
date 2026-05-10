@@ -9,11 +9,11 @@ import joblib
 df = pd.read_csv("datasets/liver.csv")
 
 #Handling missing values 
-df["Albumin_and_Globulin_Ratio"] = df["Albumin_and_Globulin_Ratio"].fillna(df["Albumin_and_Globulin_Ratio"].mean())
+df["albumin_and_globulin_ratio"] = df["albumin_and_globulin_ratio"].fillna(df["albumin_and_globulin_ratio"].mean())
 
 #Preprocessing of the data
 label_encoder = LabelEncoder()
-df["Gender"] = label_encoder.fit_transform(df["Gender"])
+df["gender"] = label_encoder.fit_transform(df["gender"])
 df["Disease"] = df["Disease"].map({1:1,2:0})
 
 #Features 

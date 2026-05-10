@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class DiabetesDTO {
     private int gender;
-    private int age;
+    private double age;
     private int hypertension;
-    private int heartDisease;
-    private int smokingHistory;
+    private int heart_disease;
+    private int smoking_history;
     private double bmi;
-    private int hbA1c;
-    private int glucoseLevel;
+    private double hbA1c_level;
+    private int blood_glucose_level;
 }

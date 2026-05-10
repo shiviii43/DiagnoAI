@@ -6,12 +6,12 @@ import lombok.Data;
 public class LiverDTO {
     private int age;
     private int gender;
-    private int totalBilirubin;
-    private int directBilirubin;
-    private int alkalinePhosphotase;
-    private int alamineAminotransferase;
-    private int aspartateAminotransferase;
-    private int totalProteins;
-    private int albumin;
-    private int albuminGlobulinRatio;
+    private double total_bilirubin;
+    private double direct_bilirubin;
+    private int alkaline_phosphotase;
+    private int alamine_aminotransferase;
+    private int aspartate_aminotransferase;
+    private double total_proteins;
+    private double albumin;
+    private double albumin_and_globulin_ratio;
 }

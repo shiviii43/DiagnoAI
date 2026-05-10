@@ -5,15 +5,15 @@ import lombok.Data;
 @Data
 public class HeartDTO {
     private int age;
-    private int sex;
-    private int chestPain;
-    private int restingBP;
-    private int cholesterol;
-    private int fastingBP;
-    private int restingECG;
+    private int gender;
+    private int cp;
+    private int restbps;
+    private int chol;
+    private int fbs;
+    private int restecg;
     private int thalach;
     private int exang;
-    private double oldPeak;
+    private double oldpeak;
     private int slope;
     private int ca;
     private  int thal;
