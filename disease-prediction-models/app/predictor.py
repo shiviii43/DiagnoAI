@@ -75,11 +75,11 @@ def predict_liver(data):
 
     ]])
 
-    prediction = liver_model.predict(input_data)
-    probabilities = liver_model.predict_proba(input_data)
-    confidence = np.max(probabilities) * 100
+    probability = liver_model.predict_proba(input_data)[0][1]
+    prediction = 1 if probability >= 0.65 else 0 
+    confidence = probability * 100 if prediction == 1 else (1 - probability) * 100
     return{
         "disease" : "Liver Disease",
-        "prediction" : int(prediction[0]),
+        "prediction": prediction,
         "confidence" : round(float(confidence),2)
     }
