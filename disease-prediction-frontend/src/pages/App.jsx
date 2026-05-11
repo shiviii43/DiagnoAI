@@ -6,6 +6,7 @@ import Donate from "./Donate"
 import Layout from "../components/Layout"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import StartPage from './StartPage'
+import Result from './Result'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/donate" element={<Donate/>}/>
             <Route path="/startPage" element={<StartPage/>}/>
+            <Route path="/result" element={<Result/>}/>
           </Route>
         </Routes>
       </div>  

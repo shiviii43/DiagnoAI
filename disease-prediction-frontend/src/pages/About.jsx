@@ -5,7 +5,7 @@ function About() {
   const title = "DiagnoAI - Smart Disease Prediction Powered by AI"
   const paragraph = "Helping users detect potential health risks early using Machine Learning. "
   return (
-    <div className=" max-w-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
+    <div className=" max-w-3xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
       <PageTitle title={title} paragraph={paragraph}/>
       <h1 className="h1">About DiagnoAI</h1>
       <p className="content">DiagnoAI is an AI-powered disease prediction platform designed to assist users in identifying potential health risks based on their symptoms. The goal of this project is to make early health insights more accessible, faster, and easier to understand using modern technology.</p>

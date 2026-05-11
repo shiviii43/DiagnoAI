@@ -3,12 +3,15 @@ import "../components/DiseaseFields"
 import { useState } from "react"
 import {DiseaseFields} from "../components/DiseaseFields"
 import API from '../services/api'
+import { useNavigate } from "react-router-dom"
 
 const StartPage = () => {
     const[selectedDisease, setSelectedDisease] = useState("")
     const[formData,setFormData] = useState({})
 
     const fields = DiseaseFields[selectedDisease]?.fields || []
+
+    const navigate = useNavigate()
 
     const handleChange = (e) =>{
         setFormData({
@@ -23,21 +26,25 @@ const StartPage = () => {
 
         try{
             const processedData = DiseaseFields[selectedDisease].transform(formData);
-            console.log("Disease : ", selectedDisease)
-            console.log("Processed Data : ",processedData)
 
             //Sending the Form data to the backend.
             const response = await API.post(
                 `/${selectedDisease}/predict`,
                 processedData
             );
-            console.log("Prediction Result: ",response.data);
+            
+            //Sending the response data to the Result Page
+            navigate("/result",{
+                state: {
+                    predictionData : response.data
+                }
+            })
         }catch(error){
             console.error("Axios Error:",error);
         }
     }
     return(
-        <div className=" max-w-4xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
+        <div className=" max-w-4xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
             <PageTitle title="Information Input Form" paragraph="Enter the details below to analyse the Patient's symptoms"/>
             {/*The Select Component*/}
             <select

@@ -8,7 +8,7 @@ function Donate() {
   const title = "Support our Disease Prediction App"
   const paragraph = "Help us make early disease detection accessible to everyone"
   return (
-    <div className=" max-w-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
+    <div className=" max-w-3xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
       <PageTitle title={title} paragraph={paragraph}/>
       <p>Your support allows us to enhance our AI models and keep the app free for all users</p>
       <div className="flex flex-col my-5">
