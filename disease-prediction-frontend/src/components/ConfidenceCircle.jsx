@@ -54,7 +54,7 @@ function ConfidenceCircle({ percentage }) {
       <div className="absolute text-center">
 
         <h1
-          className="text-4xl font-bold"
+          className="text-3xl font-bold"
           style={{ color }}
         >
           {percentage}%

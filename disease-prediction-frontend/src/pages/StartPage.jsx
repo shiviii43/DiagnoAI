@@ -22,17 +22,18 @@ const StartPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log("FORM SUBMITTED");
         if(!selectedDisease) return;
 
         try{
             const processedData = DiseaseFields[selectedDisease].transform(formData);
-
+            console.log("Sending:", processedData);
             //Sending the Form data to the backend.
             const response = await API.post(
                 `/${selectedDisease}/predict`,
                 processedData
             );
-            
+            console.log("Response:", response.data)
             //Sending the response data to the Result Page
             navigate("/result",{
                 state: {
@@ -100,7 +101,7 @@ const StartPage = () => {
         ))}
 
         {fields.length > 0 && (
-          <button className="w-full bg-purple-600 hover:bg-purple-700 p-2 rounded mt-4">
+          <button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 p-2 rounded mt-4" >
             Predict
           </button>
         )}

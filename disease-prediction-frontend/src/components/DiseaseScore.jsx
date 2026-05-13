@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStethoscope, faBrain, faUserDoctor, faRotate} from "@fortawesome/free-solid-svg-icons"
 import ConfidenceCirle from './ConfidenceCircle'
-
+import { useNavigate } from "react-router-dom";
 
 function DiseaseScore({disease,confidence,prediction}){
+
+    const navigate = useNavigate()
 
     const isSuffering = prediction==1;
     let diseaseSurity;
@@ -46,7 +48,7 @@ function DiseaseScore({disease,confidence,prediction}){
                 </div>           
             </div>
             <div className="flex mx-auto">
-                <button className="mx-auto my-3 bg-purple-700 text-white py-1 px-7 rounded-lg shadow-2xl hover:scale-105" ><FontAwesomeIcon className="mr-1.5" icon={faRotate} color="white"/>Try Again</button> 
+                <button className="mx-auto my-3 bg-purple-700 text-white py-1 px-7 rounded-lg shadow-2xl hover:scale-105" onClick={()=>navigate("/startpage")}><FontAwesomeIcon className="mr-1.5" icon={faRotate} color="white"/>Try Again</button> 
             </div>
         </div>
     )
