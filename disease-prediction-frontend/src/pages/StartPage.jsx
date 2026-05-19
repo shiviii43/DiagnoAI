@@ -45,7 +45,7 @@ const StartPage = () => {
         }
     }
     return(
-        <div className=" max-w-4xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
+        <div className=" max-w-2xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
             <PageTitle title="Information Input Form" paragraph="Enter the details below to analyse the Patient's symptoms"/>
             {/*The Select Component*/}
             <select
@@ -63,9 +63,9 @@ const StartPage = () => {
             </select>  
 
             {/*Dynamic Form*/}
-            <form onSubmit={handleSubmit} className="w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-xl space-y-4" >
+            <form onSubmit={handleSubmit} className="w-full max-w-xl bg-white/10 backdrop-blur-md p-6 rounded-xl space-y-3 mx-auto" >
                 {fields.length === 0 && (
-                    <p className="text-center text-gray-400"> Please Select a Disease :</p>
+                    <p className="text-center text-gray-400"> Please select a disease to have access to the input form.</p>
                 )}
                 {fields.map((field) => (
                     <div key={field.name}>
@@ -101,7 +101,7 @@ const StartPage = () => {
         ))}
 
         {fields.length > 0 && (
-          <button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 p-2 rounded mt-4" >
+          <button type="submit" className="w-full text-white bg-purple-600 hover:bg-purple-700 p-2 rounded mt-4" >
             Predict
           </button>
         )}

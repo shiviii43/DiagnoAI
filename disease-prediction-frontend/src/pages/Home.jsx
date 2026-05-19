@@ -61,8 +61,8 @@ function Home(){
 
     return(
         <>
-            <div className="bg-[url(./src/assets/images/HeaderIntegrated.png)] bg-cover -mt-30 pb-10 pt-40">
-                <div className="max-w-md p-6 text-mist-100">
+            <div className="bg-[url(./src/assets/images/HeaderIntegrated.png)] bg-cover -mt-17 pb-10 pt-40">
+                <div className="max-w-md p-6 text-mist-100 mb-10">
                     <h1 className="font-bold p-2 text-3xl">AI-Powered Disease Prediction in Seconds</h1>
                     <p className="italic m-1 text-black">Get accurate health insights instantly with advance AI technology.</p>
                     <div className="p-2">

@@ -4,7 +4,7 @@ function Contact() {
   const title = "Contact Us"
   const paragraph = "Have questions, feedback, or suggestions? We'd love to hear from you."
   return (
-    <div className=" max-w-5xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
+    <div className=" max-w-3xl bg-white/60 backdrop-blur-lg border border-white/20 shadow-xl mx-auto my-10 rounded-3xl p-7">
       <PageTitle title={title} paragraph={paragraph}/>
       <h1>Reach out to us and we'll get back to you as soon as possible.</h1>
       <form className="bg-blue-50 flex flex-col m-5 p-5 rounded-3xl">
