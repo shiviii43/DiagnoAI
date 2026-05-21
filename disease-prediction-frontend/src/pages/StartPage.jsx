@@ -4,6 +4,7 @@ import { useState } from "react"
 import {DiseaseFields} from "../components/DiseaseFields"
 import API from '../services/api'
 import { useNavigate } from "react-router-dom"
+import '../style/startPage.css'
 
 const StartPage = () => {
     const[selectedDisease, setSelectedDisease] = useState("")
@@ -54,7 +55,7 @@ const StartPage = () => {
                     setSelectedDisease(e.target.value)
                     setFormData({})
                 }}
-                className="mb-6 p-2 border rounded"
+                className="mb-6 p-2 rounded-xl"
             >
                 <option value="">Select Disease</option>
                 <option value="diabetes">Diabetes</option>
@@ -78,7 +79,7 @@ const StartPage = () => {
                     name={field.name}
                     value={formData[field.name] || ""}
                     onChange={handleChange}
-                    className="w-full p-2 rounded bg-white/20 border border-white/30"
+                    className="w-full p-2 rounded bg-white/20 border border-black/20"
                 >
                 <option value="">Select</option>
                 {field.options.map((opt) => (
@@ -94,7 +95,7 @@ const StartPage = () => {
                 value={formData[field.name] || ""}
                 step={field.step || "1"}
                 onChange={handleChange}
-                className="w-full p-2 rounded bg-white/20 border border-white/30"
+                className="w-full p-2 rounded bg-white/20 border border-black/20"
               />
             )}
           </div>

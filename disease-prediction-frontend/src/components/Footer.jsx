@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 function Footer(){
     const navigate = useNavigate()
     return(
-        <div className= "mb-0.5 text-cyan-50 flex justify-around bg-violet-900 rounded-3xl max-w-7xl">
+        <div className= "mb-0.5 text-cyan-50 flex justify-around bg-violet-900 rounded-3xl">
             <img className=" h-12 w-auto p-2 my-auto"  src={logo}/>
             <div className="my-3">
                 <h1>Start your Health Check Now!</h1>

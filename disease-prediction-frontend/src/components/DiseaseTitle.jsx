@@ -17,6 +17,7 @@ function DiseaseTitle({disease,prediction}){
         <div className="flex py-3 px-3 bg-white/60 rounded-lg border border-white/80 shadow-2xl">
             <FontAwesomeIcon className="rounded-4xl shadow-lg my-1 mx-3 p-3 " icon={icon1} size='2x' color={iconColor}/>
             <h1 className={`${primaryColor} text-xs font-semibold py-3`}>PREDICTION RESULT <span className='text-2xl text-shadow-xs'>{result}</span></h1>
+            <div className="w-px h-13 bg-gray-700/30 my-auto mx-5"></div>
             <div className="flex py-3">
                 <p className="text-xs">{paragraph}<span className={primaryColor}>{disease}.</span></p>
                 <FontAwesomeIcon className="my-auto ml-1 mr-4" icon={icon2} size='2x' color={iconColor}/>

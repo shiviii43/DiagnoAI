@@ -62,24 +62,32 @@ function Home(){
     return(
         <>
             <div className="bg-[url(./src/assets/images/HeaderIntegrated.png)] bg-cover -mt-17 pb-10 pt-40">
-                <div className="max-w-md p-6 text-mist-100 mb-10">
-                    <h1 className="font-bold p-2 text-3xl">AI-Powered Disease Prediction in Seconds</h1>
+                <div className="max-w-md p-6 text-mist-100 mb-10 ml-6">
+                    <h1 className="font-bold p-2 text-4xl">AI-Powered Disease Prediction in Seconds</h1>
                     <p className="italic m-1 text-black">Get accurate health insights instantly with advance AI technology.</p>
                     <div className="p-2">
-                        <button className="rounded-2xl  bg-blue-900 pl-2 pr-2 pt-1 pb-1 text-xs mr-2 hover:bg-blue-800 hover:shadow-lg hover:scale-110" onClick={()=>navigate("/startPage")}>Start Diagnose</button>
-                        <button className="rounded-2xl bg-white text-xs text-black pl-2 pr-2 pt-1 pb-1 ml-1 hover:scale-110" onClick={scrollToSection}>Learn More</button>
+                        <button className="rounded-2xl  bg-blue-900 px-4 py-2 text-xs mr-2 hover:bg-blue-800 hover:shadow-lg hover:scale-110" onClick={()=>navigate("/startPage")}>Start Diagnose</button>
+                        <button className="rounded-2xl bg-white text-xs text-black px-4 py-2 ml-2 hover:scale-110" onClick={()=>navigate("/about")}>Learn More</button>
                     </div>
                 </div>
             </div>
 
-            <div className="bg-[url(/src/assets/images/FooterBG2.png)] bg-bottom ">
-                <h1 className="flex justify-center">How it works</h1>
+            <div className="bg-[url(/src/assets/images/FooterBG2.png)] bg-bottom mt-10 pb-5">
+                <div className="flex justify-center mb-3">
+                    <div className="h-px w-1/3 bg-black my-auto mx-5 "></div>
+                    <h1 className="flex justify-center font-semibold">How it works</h1>
+                    <div className="h-px w-1/3 bg-black my-auto mx-5 "></div>
+                </div>
                 <div className=" flex flex-wrap gap-6 justify-center">
                     {cards.map((card,index)=>(
                         <Card key={index} {...card}/>
                     ))}
                 </div>
-                <h1 className="flex justify-center" ref={sectionReference}>Key Features</h1>
+                <div className="flex justify-center mt-10 mb-2">
+                    <div className="h-px w-1/3 bg-black my-auto mx-5 "></div>
+                    <h1 className="flex justify-center font-semibold ">Key Features</h1>
+                    <div className="h-px w-1/3 bg-black my-auto mx-5 "></div>
+                </div>
                 <div className=" flex flex-wrap gap-6 justify-center">
                     {card2.map((card,index)=>(
                         <Card2 key={index} {...card}/>
