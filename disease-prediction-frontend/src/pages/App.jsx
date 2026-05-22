@@ -7,7 +7,7 @@ import Layout from "../components/Layout"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import StartPage from './StartPage'
 import Result from './Result'
-
+import ErrorPage from './ErrorPage'
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
             <Route path="/donate" element={<Donate/>}/>
             <Route path="/startPage" element={<StartPage/>}/>
             <Route path="/result" element={<Result/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
           </Route>
         </Routes>
       </div>  
