@@ -7,7 +7,7 @@ import AIchip from "../assets/images/Aichip2.png"
 import Watch from "../assets/images/Watch.png"
 import Secure from "../assets/images/Secure.png"
 import EasyUse from "../assets/images/EasyUse.png"
-import BG from './src/assets/images/HeaderIntegrated.png'
+import BG from '../assets/images/HeaderIntegrated.png'
 import { useNavigate } from "react-router-dom"
 import { useRef } from "react"
 
