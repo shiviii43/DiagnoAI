@@ -7,6 +7,7 @@ import AIchip from "../assets/images/Aichip2.png"
 import Watch from "../assets/images/Watch.png"
 import Secure from "../assets/images/Secure.png"
 import EasyUse from "../assets/images/EasyUse.png"
+import BG from './src/assets/images/HeaderIntegrated.png'
 import { useNavigate } from "react-router-dom"
 import { useRef } from "react"
 
@@ -61,7 +62,7 @@ function Home(){
 
     return(
         <>
-            <div className="bg-[url(./src/assets/images/HeaderIntegrated.png)] bg-cover -mt-17 pb-10 pt-40">
+            <div className="bg-cover -mt-17 pb-10 pt-40" style={{backgroundImage:`url(${BG})`}}>
                 <div className="max-w-md p-6 text-mist-100 mb-10 ml-6">
                     <h1 className="font-bold p-2 text-4xl">AI-Powered Disease Prediction in Seconds</h1>
                     <p className="italic m-1 text-black">Get accurate health insights instantly with advance AI technology.</p>
