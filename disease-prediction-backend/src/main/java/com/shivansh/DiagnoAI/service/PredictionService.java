@@ -16,7 +16,7 @@ public class PredictionService {
     private RestTemplate restTemplate;
 
     public ResponseDTO predictDiabetes(DiabetesDTO diabetesData){
-        String url = "http://localhost:8000/predict/diabetes";
+        String url = "https://diagnoai-3kcj.onrender.com/predict/diabetes";
         ResponseDTO response = restTemplate.postForObject(
                 url,
                 diabetesData,
@@ -25,7 +25,7 @@ public class PredictionService {
         return response;
     }
     public ResponseDTO predictHeart(HeartDTO heartData){
-        String url = "http://localhost:8000/predict/heart";
+        String url = "https://diagnoai-3kcj.onrender.com/predict/heart";
         ResponseDTO response = restTemplate.postForObject(
                 url,
                 heartData,
@@ -34,7 +34,7 @@ public class PredictionService {
         return response;
     }
     public ResponseDTO predictLiver(LiverDTO liverData){
-        String url = "http://localhost:8000/predict/liver";
+        String url = "https://diagnoai-3kcj.onrender.com/predict/liver";
         ResponseDTO response = restTemplate.postForObject(
                 url,
                 liverData,
