@@ -1,8 +1,6 @@
 import "../style/Donate.css"
 import PageTitle from '../components/PageTitle'
-import UPI from "../assets/images/UPI_Logo.png"
 import RazerPay from "../assets/images/Razorpay_logo.svg"
-import Stripe from "../assets/images/Stripe_Logo.png"
 
 function Donate() {
   const title = "Support our Disease Prediction App"
@@ -14,10 +12,10 @@ function Donate() {
       <div className="flex flex-col my-5">
         <h1 className="mx-auto">Choose an amount to contribute : </h1>
         <div className="mx-auto my-5" >
-          <button className="btn">₹ 100</button>
-          <button className="btn">₹ 500</button>
-          <button className="btn">₹ 1000</button>
-          <button className="btn">₹ 2000</button> 
+          <button className="btn" value={100}>₹ 100</button>
+          <button className="btn" value={500}>₹ 500</button>
+          <button className="btn" value={1000}>₹ 1000</button>
+          <button className="btn" value={2000}>₹ 2000</button> 
         </div>
         <button className="bg-blue-800 text-white px-4 py-0.5 mx-auto my-2 rounded-lg">Donate a custom amount</button>
       </div>
@@ -29,11 +27,7 @@ function Donate() {
         <div className="grow border-t border-gray-400"></div>
       </div>
       <div className="flex justify-center my-5">
-        <img className="paymentLogo" src={UPI}/>
-        <div className="h-8 border-l border-gray-400"></div>
         <img className="paymentLogo" src={RazerPay}/>
-        <div className="h-8 border-l border-gray-400"></div>
-        <img className="paymentLogo" src={Stripe}/>
       </div>
       <p>💚 Every contribution brings us closer to a healthier future.</p>
     </div>
